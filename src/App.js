@@ -1,23 +1,15 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
-import styled, { keyframes, css } from "styled-components";
+import { Route } from "react-router-dom";
+import styled from "styled-components";
 import Home from "./views/Home";
 import About from "./views/About";
 import SideBar from "./components/SideBar";
 import NavBar from "./components/NavBar";
 import PageLayout from "./components/PageLayout";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleSideBar } from "./redux/uiActions";
+import { useSelector } from "react-redux";
 
 function App() {
-  const dispatch = useDispatch();
   const TOGGLE = useSelector((state) => state.toggleSidebar);
-
-  const reduce = TOGGLE ? "reduce" : "";
-
-  React.useEffect(() => {
-    // console.log("App Mounted", TOGGLE);
-  }, [TOGGLE]);
 
   return (
     <Layout>
@@ -45,8 +37,6 @@ const Layout = styled.div`
   background: lightblue;
   outline: none;
   border: none;
-  /* margin: 0 2rem; */
-  /* border: 1px solid red; */
 `;
 
 const Header = styled.header`
@@ -62,10 +52,6 @@ const Main = styled.main`
   transition: all 0.2s ease;
 
   ${(props) => (props.show ? "grid-area: 2 / 2 / 3 / 3;" : "")}
-
-  @media (min-width: 600px) {
-    /* grid-area: 2 / 2 / 3 / 3; */
-  }
 `;
 
 export default App;

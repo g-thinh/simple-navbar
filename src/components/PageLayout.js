@@ -6,7 +6,7 @@ const PageLayout = ({ children }) => {
 const Wrapper = styled.div`
   width: 100%;
   overflow: auto;
-  height: 500vh;
+  min-height: calc(100vh - 3rem);
   padding: 1rem 2rem;
   /* border-radius: 1rem; */
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),

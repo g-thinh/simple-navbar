@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { FiMenu, FiChevronLeft, FiGithub } from "react-icons/fi";
+import { FiMenu, FiChevronLeft, FiGithub, FiUser } from "react-icons/fi";
 import { toggleSideBar } from "../redux/uiActions";
 
 const NavBar = () => {
@@ -58,8 +58,8 @@ const NavBar = () => {
           </MenuButton>
           <h6>Simple NavBar</h6>
         </Left>
-        <Right href="https://github.com/g-thinh" target="_blank">
-          <FiGithub size="1.5rem" />
+        <Right href="https://giathinhnguyen.com/" target="_blank">
+          <FiUser size="1.5rem" />
         </Right>
       </NavContainer>
     </Transition>
@@ -143,13 +143,14 @@ const Right = styled.a`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-right: 1rem;
   &:hover {
     color: lightblue;
   }
 
-  &:visited {
+  /* &:visited {
     color: lightblue;
-  }
+  } */
 `;
 
 export default NavBar;

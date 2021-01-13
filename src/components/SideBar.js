@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleSideBar } from "../redux/uiActions";
 
@@ -14,10 +14,22 @@ const SideBar = () => {
       <SidebarContainer show={TOGGLE}>
         <MenuList>
           <li>
-            <StyledLink to="/">Home</StyledLink>
+            <StyledLink
+              exact
+              to="/"
+              onClick={(ev) => dispatch(toggleSideBar())}
+            >
+              Home
+            </StyledLink>
           </li>
           <li>
-            <StyledLink to="/about">About</StyledLink>
+            <StyledLink
+              exact
+              to="/about"
+              onClick={(ev) => dispatch(toggleSideBar())}
+            >
+              About
+            </StyledLink>
           </li>
         </MenuList>
       </SidebarContainer>
@@ -65,17 +77,31 @@ const MenuList = styled.ul`
   padding: 2rem;
   & li {
     padding: 1rem;
+    display: flex;
+    /* justify-content: center;
+    align-items: center;
+    flex-direction: column; */
   }
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink).attrs({ activeClassName: "active" })`
   text-decoration: none;
   color: black;
   font-size: 1.3rem;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  text-align: center;
 
   &:hover {
-    text-decoration: underline;
+    background: lightblue;
+    /* text-decoration: underline; */
     transition: all 0.5s ease;
+  }
+
+  &.active {
+    font-weight: bolder;
+    text-decoration: underline;
   }
 `;
 

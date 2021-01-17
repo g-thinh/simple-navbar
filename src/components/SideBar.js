@@ -42,10 +42,10 @@ const SidebarContainer = styled.div`
   z-index: 3;
   left: 0;
   height: 100vh;
-  width: 60%;
+  width: 70%;
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
     0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
-  background: lightcyan;
+  background: #ffff;
   transform: ${(props) =>
     props.show ? "translateX(0%)" : "translateX(-100%)"};
   transition: all 0.3s ease-in-out;

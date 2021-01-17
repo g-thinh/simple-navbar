@@ -7,12 +7,14 @@ import SideBar from "./components/SideBar";
 import NavBar from "./components/NavBar";
 import PageLayout from "./components/PageLayout";
 import { useSelector } from "react-redux";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const TOGGLE = useSelector((state) => state.toggleSidebar);
 
   return (
     <Layout>
+      <ScrollToTop />
       <Header>
         <NavBar />
       </Header>
